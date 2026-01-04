@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practices101/pages/homepage.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -20,7 +21,7 @@ class _LoginState extends State<Login> {
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         margin: const EdgeInsets.all(16),
-        duration: const Duration(seconds: 2),
+        duration: const Duration(seconds: 1),
         content: Text(message),
         backgroundColor: color,
       ),
@@ -34,7 +35,14 @@ class _LoginState extends State<Login> {
       } else if (username.text != "admin" || password.text != "admin") {
         showMessage("Invalid Credentials!", Colors.red);
       } else {
-        showMessage("Login Successful!", Colors.green);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return Homepage();
+            },
+          ),
+        );
       }
     });
   }
@@ -64,7 +72,7 @@ class _LoginState extends State<Login> {
               child: TextField(
                 controller: username,
                 decoration: InputDecoration(
-                  prefix: Icon(Icons.person),
+                  prefixIcon: Icon(Icons.person),
                   labelText: 'Username',
                   hintText: 'Enter your username',
                   border: OutlineInputBorder(
@@ -83,7 +91,7 @@ class _LoginState extends State<Login> {
                 obscureText: isObscure,
                 controller: password,
                 decoration: InputDecoration(
-                  prefix: Icon(Icons.lock),
+                  prefixIcon: Icon(Icons.lock),
                   labelText: 'Password',
                   hintText: 'Enter your password',
                   suffix: IconButton(
