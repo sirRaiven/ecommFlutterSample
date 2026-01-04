@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practices101/pages/homepage.dart';
+import 'package:practices101/pages/home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return Homepage();
+              return Home();
             },
           ),
         );
@@ -94,7 +94,7 @@ class _LoginState extends State<Login> {
                   prefixIcon: Icon(Icons.lock),
                   labelText: 'Password',
                   hintText: 'Enter your password',
-                  suffix: IconButton(
+                  suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
                         isObscure = !isObscure;

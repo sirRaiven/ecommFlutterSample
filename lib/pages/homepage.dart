@@ -16,7 +16,6 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  int _currentIndex = 0; // UI state only
 
   void addToCart(Product product) {
     setState(() {
@@ -41,8 +40,6 @@ class _HomepageState extends State<Homepage> {
     Product(name: "Power Bank", price: 999),
     Product(name: "USB-C Cable", price: 299),
   ];
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,36 +131,7 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
 
-      /// 🔹 Bottom Navigation Bar (UI Only)
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.orange,
-        unselectedItemColor: Colors.grey,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.category_outlined),
-            label: "Categories",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: "Cart",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: "Account",
-          ),
-        ],
-      ),
+
     );
   }
 
@@ -261,5 +229,4 @@ class _HomepageState extends State<Homepage> {
       ),
     );
   }
-
 }

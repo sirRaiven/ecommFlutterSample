@@ -22,10 +22,18 @@ class _CartState extends State<Cart> {
               itemBuilder: (context, index) {
                 final product = widget.cartItems[index];
                 return ListTile(
-                  leading: const Icon(Icons.shopping_bag),
+                  leading: Icon(Icons.shopping_bag),
                   title: Text(product.name),
                   subtitle: Text("₱${product.price.toStringAsFixed(0)}"),
-                  trailing: const Icon(Icons.delete_outline),
+                  trailing: IconButton(
+                    onPressed: () {
+                      // Remove item from cart
+                      setState(() {
+                        widget.cartItems.removeAt(index);
+                      });
+                    },
+                    icon: const Icon(Icons.delete_outline),
+                  ),
                 );
               },
             ),
