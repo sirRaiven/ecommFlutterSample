@@ -23,7 +23,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[_currentIndex],
-
       /// 🔹 Bottom Navigation Bar (UI Only)
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,

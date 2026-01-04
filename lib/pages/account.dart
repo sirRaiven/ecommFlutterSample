@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practices101/pages/Login.dart';
 
 class Account extends StatefulWidget {
   const Account({super.key});
@@ -11,7 +12,10 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("My Account")),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Center(child: Text("My Account")),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -26,14 +30,14 @@ class _AccountState extends State<Account> {
             const SizedBox(height: 12),
 
             const Text(
-              "Juan Dela Cruz",
+              "Mr. Raiven Supan",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
 
             const SizedBox(height: 4),
 
             const Text(
-              "juan.delacruz@email.com",
+              "mr.raiven@itdev.edu",
               style: TextStyle(color: Colors.grey),
             ),
 
@@ -67,13 +71,22 @@ class _AccountState extends State<Account> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.orangeAccent,
                   padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
                 onPressed: () {
-                  // UI only – navigation logic later
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Login()),
+                  );
                 },
-                child: const Text("Logout", style: TextStyle(fontSize: 16)),
+                child: const Text(
+                  "Logout",
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
               ),
             ),
           ],

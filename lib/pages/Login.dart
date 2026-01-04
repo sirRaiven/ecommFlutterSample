@@ -63,7 +63,8 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // LOGO
-            Image(image: AssetImage('assets/flutter-logo.png'), height: 100),
+            // Image(image: AssetImage('assets/flutter-logo.png'), height: 100),
+            Icon(Icons.shopping_bag, size: 130, color: Colors.orangeAccent),
             // Input Fields
             SizedBox(height: 20),
             // Username Field
@@ -72,7 +73,7 @@ class _LoginState extends State<Login> {
               child: TextField(
                 controller: username,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: Icon(Icons.person, color: Colors.orangeAccent),
                   labelText: 'Username',
                   hintText: 'Enter your username',
                   border: OutlineInputBorder(
@@ -91,7 +92,7 @@ class _LoginState extends State<Login> {
                 obscureText: isObscure,
                 controller: password,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: Icon(Icons.lock, color: Colors.orangeAccent),
                   labelText: 'Password',
                   hintText: 'Enter your password',
                   suffixIcon: IconButton(
@@ -102,6 +103,7 @@ class _LoginState extends State<Login> {
                     },
                     icon: Icon(
                       isObscure ? Icons.visibility : Icons.visibility_off,
+                      color: Colors.orangeAccent,
                     ),
                   ),
                   border: OutlineInputBorder(
@@ -126,7 +128,7 @@ class _LoginState extends State<Login> {
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.orangeAccent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
